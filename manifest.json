@@ -1,0 +1,33 @@
+{
+	"name": "Wolverine",
+	"manifest_version": 2,
+	"version": "0.1",
+	"permissions": [
+		"webRequest",
+		"webRequestBlocking",
+		"https://mail.google.com/*",
+		"tabs",
+		"https://*.googleusercontent.com/proxy/*",
+		"https://app.mixmax.com/api/track/*",
+		"https://cdn1.iconfinder.com/data/icons/hawcons/32/698425-icon-21-eye-hidden-128.png"
+	],
+	"icons": {
+		"48": "images/eye_48x48.png"
+	},
+	"content_scripts": [
+		{
+			"matches": ["https://mail.google.com/*"],
+			"js": ["jquery-1.12.1.min.js", "content.js"]
+		}
+	],
+	"background": {
+		"scripts": ["jquery-1.12.1.min.js", "background.js"]
+	},
+	"page_action": {
+		"default_icon": "images/eye.png"
+	},
+	"web_accessible_resources": [
+		"images/eye_48x48.png",
+		"images/open_eye_48x48.png"
+	]
+}
